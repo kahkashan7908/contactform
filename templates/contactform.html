@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    {% include 'cdnlines.html' %}
+    <style>
+        form{
+            box-shadow: 0px 0px 10px grey;
+            margin-top: 30px;
+            padding: 20px;
+        }
+        input[name]{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="offset-4 col-4">
+            <form metho="POST">
+                {% csrf_token %}
+                <input type="text" placeholder="Enter Your First Name" name="Fname" class="form-control">
+                <input type="text" placeholder="Enter Your First Name" name="Lname" class="form-control">
+                <input type="email" placeholder="Enter Your Email ID" name="email" class="form-control">
+                <input type="number" placeholder="Enter Your Mobile Number" name="mobile" class="form-control">
+                <input type="text" placeholder="Enter Your Location" name="location" class="form-control">
+                <center class="mt-2">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <input type="reset" value="Cancel" class="btn btn-danger ">
+                </center>
+
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

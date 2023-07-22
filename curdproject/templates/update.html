@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student data form</title>
+    {% include 'cdnlines.html' %}
+   <style>
+    input{
+        margin-top: 10px;
+    }
+    form{
+        box-shadow: 0px 0px 10px blue, 0px 0px 10px red;
+        border-radius: 5%;
+        padding: 20px;
+        margin-top: 20px;
+    }
+   </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="offset-4 col-4">
+            <h1 class="text-center mt-2">Enter your deatils</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" placeholder="Enter first_name" name="fname" value="{{val.first_name}}" class="form-control">
+                <input type="text" placeholder="Enter last_name" name="lname" value="{{val.last_name}}" class="form-control">
+                <input type="email" placeholder="Enter Email ID" name="email" value="{{val.emil}}" class="form-control">
+                <input type="number" placeholder="Enter mobile number" name="mobile" value="{{val.mobile}}" class="form-control">
+                <input type="text" placeholder="Enter iname" name="iname" value="{{val.iname}}" class="form-control">
+                <input type="number" placeholder="Enter fee" name="fee" value="{{val.fee}}" class="form-control">
+                <input type="number" placeholder="Enter marks" name="marks" value="{{val.marks}}" class="form-control">
+                <input type="text" placeholder="Enter location" name="location" value="{{val.location}}" class="form-control">
+                <center>
+                    <div>
+                        <input type="submit" value="updat data" class="btn btn-outline-success btn-sm">
+                        <input type="reset"  value="clear" class="btn btn-outline-danger btn-sm">
+                    </div>
+                    <a href="{%url 'mainPage'%}" class="btn btn-outline-primary btn-sm mt-1">Go to mainpage</a>
+                </center>
+            </form>
+        </div>
+    </div>   
+</body>
+</html>
